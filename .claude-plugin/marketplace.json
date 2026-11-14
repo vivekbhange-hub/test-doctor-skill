@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "test-doctor-skill",
+  "description": "Find out why a test suite is unhealthy and fix it, from JUnit XML, coverage files and the test code itself.",
+  "owner": { "name": "Vivek Bhange", "url": "https://github.com/vivekbhange-hub" },
+  "plugins": [
+    {
+      "name": "test-doctor-skill",
+      "description": "Five skills and two agents that rank flaky tests from CI JUnit runs, list where to write tests first from coverage, find tests that cannot fail, write tests that are proven able to fail, and triage a red CI run by root cause.",
+      "source": "./",
+      "category": "development",
+      "homepage": "https://github.com/vivekbhange-hub/test-doctor-skill"
+    }
+  ]
+}

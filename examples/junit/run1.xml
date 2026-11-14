@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="pytest" errors="1" failures="2" skipped="1" tests="24" time="14.960" timestamp="2026-11-03T09:11:00.000000" hostname="ci-runner-1">
+    <testcase classname="tests.test_cart.TestCart" name="test_add_item" file="tests/test_cart.py" time="0.020" />
+    <testcase classname="tests.test_cart.TestCart" name="test_remove_item" file="tests/test_cart.py" time="0.020" />
+    <testcase classname="tests.test_cart.TestCart" name="test_total_with_tax" file="tests/test_cart.py" time="0.030" />
+    <testcase classname="tests.test_cart.TestCart" name="test_apply_coupon" file="tests/test_cart.py" time="0.030" />
+    <testcase classname="tests.test_cart.TestCart" name="test_apply_coupon_expired" file="tests/test_cart.py" time="0.030">
+      <failure message="assert Decimal('9.99') == Decimal('10.00')" type="AssertionError">self = &lt;tests.test_cart.TestCart object at 0x7f1d2c3b4e10&gt;
+
+    def test_apply_coupon_expired(self):
+        cart = make_cart(total=Decimal('10.00'))
+        cart.apply_coupon('SPRING24')
+&gt;       assert cart.total == Decimal('10.00')
+E       assert Decimal('9.99') == Decimal('10.00')
+
+tests/test_cart.py:41: AssertionError</failure>
+    </testcase>
+    <testcase classname="tests.test_checkout.TestCheckout" name="test_empty_cart_rejected" file="tests/test_checkout.py" time="0.040" />
+    <testcase classname="tests.test_checkout.TestCheckout" name="test_order_confirmation_email" file="tests/test_checkout.py" time="0.410" />
+    <testcase classname="tests.test_checkout.TestCheckout" name="test_full_checkout_flow" file="tests/test_checkout.py" time="8.400" />
+    <testcase classname="tests.test_checkout.TestCheckout" name="test_payment_declined" file="tests/test_checkout.py" time="0.210" />
+    <testcase classname="tests.test_inventory.TestInventory" name="test_reserve_stock" file="tests/test_inventory.py" time="0.060">
+      <failure message="sqlite3.IntegrityError: UNIQUE constraint failed: reservations.sku (row 17)" type="sqlite3.IntegrityError">tests/test_inventory.py:22: in test_reserve_stock
+    inventory.reserve('SKU-1001', qty=2)
+E   sqlite3.IntegrityError: UNIQUE constraint failed: reservations.sku (row 17)</failure>
+    </testcase>
+    <testcase classname="tests.test_inventory.TestInventory" name="test_release_stock" file="tests/test_inventory.py" time="0.050" />
+    <testcase classname="tests.test_inventory.TestInventory" name="test_low_stock_alert" file="tests/test_inventory.py" time="0.050" />
+    <testcase classname="tests.test_api.TestPricingApi" name="test_fetch_exchange_rate" file="tests/test_api.py" time="0.320" />
+    <testcase classname="tests.test_api.TestPricingApi" name="test_price_list_pagination" file="tests/test_api.py" time="0.300" />
+    <testcase classname="tests.test_api.TestPricingApi" name="test_unknown_currency" file="tests/test_api.py" time="0.100" />
+    <testcase classname="tests.test_reports.TestDailyReport" name="test_report_covers_today" file="tests/test_reports.py" time="3.100" />
+    <testcase classname="tests.test_reports.TestDailyReport" name="test_weekly_summary" file="tests/test_reports.py" time="1.200" />
+    <testcase classname="tests.test_reports.TestDailyReport" name="test_csv_export" file="tests/test_reports.py" time="0.400" />
+    <testcase classname="tests.test_recommendations.TestRecommender" name="test_top_pick_is_stable" file="tests/test_recommendations.py" time="0.070" />
+    <testcase classname="tests.test_recommendations.TestRecommender" name="test_cold_start" file="tests/test_recommendations.py" time="0.060" />
+    <testcase classname="tests.test_shipping.TestShipping" name="test_zone_lookup" file="tests/test_shipping.py" time="0.020">
+      <error message="KeyError: 'ZZ'" type="KeyError">tests/test_shipping.py:18: in test_zone_lookup
+    zone = lookup_zone(country='ZZ')
+src/shop/shipping.py:27: in lookup_zone
+    return ZONES[country]
+E   KeyError: 'ZZ'</error>
+    </testcase>
+    <testcase classname="tests.test_shipping.TestShipping" name="test_rate_for_zone" file="tests/test_shipping.py" time="0.020" />
+    <testcase classname="tests.test_shipping.TestShipping" name="test_free_shipping_threshold" file="tests/test_shipping.py" time="0.020" />
+    <testcase classname="tests.test_shipping.TestShipping" name="test_international_surcharge" file="tests/test_shipping.py" time="0.000">
+      <skipped type="pytest.skip" message="needs customs sandbox" />
+    </testcase>
+  </testsuite>
+</testsuites>

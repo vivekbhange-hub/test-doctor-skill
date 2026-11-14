@@ -1,0 +1,19 @@
+{
+  "name": "test-doctor-skill",
+  "description": "Find out why a test suite is unhealthy and fix it, from the artifacts CI already produces: flaky tests from JUnit XML, a ranked list of untested code from coverage, and tests that cannot fail.",
+  "version": "1.0.0",
+  "author": { "name": "Vivek Bhange", "url": "https://github.com/vivekbhange-hub" },
+  "homepage": "https://github.com/vivekbhange-hub/test-doctor-skill",
+  "repository": "https://github.com/vivekbhange-hub/test-doctor-skill",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-skills",
+    "testing",
+    "flaky-tests",
+    "junit",
+    "code-coverage",
+    "test-quality",
+    "ci"
+  ]
+}
